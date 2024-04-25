@@ -106,3 +106,11 @@ public class Main {
 
   }
 }
+
+//part of different code:
+
+System.out.print("Enter a title: ");
+    String title = getText();
+
+    System.out.print("Enter a description: ");
+    String description = getText();
