@@ -32,3 +32,29 @@
 		} else {
 			return "Index out of bounds";
 		}
+	}
+
+	@GetMapping("/getBook")//localhost:8080/getBook
+	public Book getBook(){
+		var book = new Book();
+		book.title = "book title";
+		book.author = "book author";
+
+		return book;
+	}
+
+	@PostMapping("/postexample")
+	public Book addBook(@RequestBody Book book){
+		book.title = book.title.toUpperCase();
+		return book;
+	}
+
+	@PostMapping("/authorize")
+	public User authorize(@RequestBody Credentials credentials){ // username + password
+		if(credentials.username.equals("okklv") && credentials.password.equals("Password123")){
+			var user = new User();
+			user.name = "Oskars";
+			return user;
+		}
+		return null;
+	}
